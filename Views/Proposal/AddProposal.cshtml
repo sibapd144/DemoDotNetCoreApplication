@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "AddProposal";
+}
+@model Proposal
+<h1>AddProposal</h1>
+@if (ViewBag.iSuccess)
+{
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Success</strong>  Proposal Added Successfully!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+}
+<div class="container">
+    <p>Create Proposal</p>
+    <div>
+        <form asp-action="AddProposal" method="post" asp-controller="Proposal">
+            <div class="form-group">
+                <label asp-for="SiteNo"> Site No</label>
+                <input asp-for="SiteNo" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Title"> Title</label>
+                <input asp-for="Title" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Description"> Description</label>
+                <input asp-for="Description" class="form-control" />
+            </div>
+            <button class="btn btn-primary" >Submit</button>
+        </form>
+    </div>
+</div>
